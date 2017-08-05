@@ -1,0 +1,546 @@
+/* stylelint-disable color-hex-length */
+/**
+ * Default preset file.
+ *
+ * Use this space to customise variables, create mixins and override SCSS.
+ */
+
+// Colors
+$gray-dark:                 #373a3c !default;
+$gray:                      #55595c !default;
+$gray-light:                #818a91 !default;
+$gray-lighter:              #eceeef !default;
+$gray-lightest:             #f7f7f9 !default;
+
+$brand-primary:             #2F7DA8 !default;
+$brand-success:             #77b300 !default;
+$brand-warning:             #ff8800 !default;
+$brand-danger:              #ff4136 !default;
+$brand-inverse:             $gray-dark !default;
+$navbar-height:             50px !default;
+$link-on-background:        #fff;
+$link-on-background-hover:  rgba(255,255,255,0.5);
+$bg-gris:                   #f4f4f4;
+$color-link:                #F05F30;
+
+
+// Spacing
+$spacer:   1rem !default;
+$spacer-x: $spacer !default;
+$spacer-y: $spacer !default;
+$border-width: 1px !default;
+
+// Body
+$body-bg:    #fff !default;
+$body-color: #3a3a3a !default;
+
+// Typography
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", Arial, sans-serif !default;
+$font-size-root: 14px !default;
+
+// Tables
+$table-bg:                      transparent !default;
+$table-bg-accent:               #fafafa !default;
+$table-bg-hover:                lighten($brand-primary, 55%) !default;
+$table-bg-active:               $table-bg-hover !default;
+$table-border-color:            #f4f4f4 !default;
+
+// Dropdowns
+$dropdown-border-color:          #e2e2e2 !default;
+$dropdown-link-color:            rgba(0, 0, 0, .535) !default;
+
+// Navbar
+$navbar-light-color:                #0d6677 !default;
+$navbar-light-hover-color:          $brand-primary !default;
+$navbar-light-active-color:         $brand-primary !default;
+
+// Cards
+$card-border-radius:       0 !default;
+$card-border-color:        rgba(238, 238, 238, 1) !default;
+
+// Breadcrumbs
+$breadcrumb-bg:                 transparent !default;
+$breadcrumb-padding-x:          0 !default;
+$breadcrumb-divider: "/" !default;
+$breadcrumb-divider-rtl: "/" !default;
+
+//Drawer
+$drawer-width : 285px;
+
+// Import everything.
+@import "moodle";
+
+#page-wrapper{
+    background-color:$body-bg;
+}
+
+#page-login-index #page-wrapper {
+    background-color:$bg-gris;
+}
+
+#page-login-index #page {
+    margin-top:0px;
+}
+
+/**
+ * Navigation bar identity.
+ */
+.navbar-light {
+    background-color: $navbar-light-color;
+    border-bottom: $border-width solid #004B72;
+
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .navbar-brand {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-right: $spacer * 2;
+        color: #fff;
+        background-color: $brand-primary;
+        @include hover-focus {
+            color: #fff;
+        }
+        &.has-logo {
+            color: $brand-primary;
+            background-color: transparent;
+            @include hover-focus {
+                color: $brand-primary;
+            }
+        }
+    }
+
+    .navbar-nav {
+        .nav-item + .nav-item {
+            margin-left: $spacer * 2;
+        }
+        .nav-link {
+            font-size: $font-size-sm;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color:$link-on-background;
+        }
+    }
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover,.navbar-light .navbar-nav .open>.nav-link, .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.open, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .open>.nav-link:focus, .navbar-light .navbar-nav .active>.nav-link:focus, .navbar-light .navbar-nav .nav-link.open:focus, .navbar-light .navbar-nav .nav-link.active:focus, .navbar-light .navbar-nav .open>.nav-link:hover, .navbar-light .navbar-nav .active>.nav-link:hover, .navbar-light .navbar-nav .nav-link.open:hover, .navbar-light .navbar-nav .nav-link.active:hover, .userbutton:hover{
+    color: $link-on-background-hover;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.open .nav-link, .nav-tabs .nav-link.active:focus, .nav-tabs .nav-item.open .nav-link:focus, .nav-tabs .nav-link.active:hover, .nav-tabs .nav-item.open .nav-link:hover {
+    color: #55595c;
+    background-color: $bg-gris;
+    border-color: #ddd #ddd transparent;
+}
+
+.search-input-wrapper{
+   transition:opacity .5s ease-in-out;
+}
+
+.usermenu .login a {
+    color:$link-on-background;
+}
+.usermenu .login a:hover {
+    color:$link-on-background-hover;
+}
+
+/*Zone logo - titre site*/
+.navbar-brand{
+background-color: transparent!important;
+padding-top: 0;}
+
+/*Titre du site*/
+.site-name{
+padding-left:1em;
+position: relative;
+color: $link-on-background;
+}
+
+/**
+ * Styling the dropdown menus.
+ */
+.dropdown-menu {
+    border-left-width: 5px;
+    font-size: 14px;
+    border-radius: 0;
+    background: #fcfcfc;
+    .dropdown-item {
+        color: $dropdown-link-color;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        border-bottom: $border-width solid $dropdown-border-color;
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+    .dropdown-divider {
+        display: none;
+    }
+}
+
+.format-topics .single-section .section_action_menu {
+    position: relative;
+    top: -64px;
+}
+
+.menubar .dropdown-toggle,.menubar .dropdown-toggle i{
+    color:$link-on-background;
+}
+
+/**
+ * User picture.
+ */
+.userpicture {
+    border-radius: 50%;
+}
+
+.action-menu-3-menubar {
+    background-color:$color-link;
+    padding:5px;
+    border-radius:50%;
+}
+
+.menubar {
+       background-color:$color-link;
+    padding:5px;
+    border-radius:50%;
+    color:$link-on-background;
+}
+
+.block-controls .menubar {
+       background-color:#f4f4f4;
+    color:#ccc;
+}
+
+.block-controls .menubar i.icon{
+    color:#ccc;
+}
+
+.block .block-controls .dropdown-toggle {
+    color: #ccc;
+}
+.activity .menubar {
+    background-color:transparent;
+}
+.activity .menubar a.dropdown-toggle{
+    color:$color-link;
+    border:1px solid $color-link;
+    &:hover{
+        color:$color-link;
+        background: #e8a1a1;
+    }
+}
+
+
+/**
+ * For background in content areas.
+ */
+#page.container-fluid {
+    padding: 0 (2 * $spacer);
+}
+
+#block-region-side-pre {
+    padding-left: 0;
+}
+
+/* breadcrumb */
+
+#page-navbar {
+    background-color:$body-bg;
+    padding:0 10px 0 10px;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "/";
+    content: ">";
+    color: #021002;
+}
+
+#region-main-box > #region-main > .card {
+    border-width:0px;
+}
+
+/*#page-my-index #page-header .card {
+    background-color: #B25200;
+}*/
+
+#page-header .card {
+    background-color: #B25200;
+    h1{
+        color:$link-on-background;
+    }
+}
+
+/**
+ * Dashboard styling.
+ */
+#page-my-index {
+    #region-main {
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+    }
+}
+
+.block_myoverview .courses-view-course-item {
+    height: auto;
+}
+
+/**
+ * Navigation.
+ */
+.block_navigation,
+.block_settings {
+    .block_tree .tree_item {
+        margin: ($spacer/2) 0;
+    }
+}
+
+/**
+ * Form styles.
+ */
+
+.form-group {
+    margin-top: ($spacer/2);
+}
+
+.form-inline .form-group {
+    margin-top: 0;
+}
+
+/*nav-drawer et bouton hamburger*/
+
+[data-region="drawer-toggle"] .btn-secondary{
+    background-color:$body-bg;
+}
+
+#nav-drawer {
+    /*padding          : 0;*/
+    background-color : $bg-gris;
+    .list-group-item {
+        color            : #3a3a3a;
+        background-color : #FFF;
+        /*border-top: 1px solid rgb(238, 238, 238);
+        border-bottom: 1px solid rgb(238, 238, 238);
+        border-left: 1px solid rgb(238, 238, 238);
+        border-right: 1px solid rgb(238, 238, 238);*/
+        border           : 1px solid rgb(238, 238, 238);
+        padding          : .55rem 1rem;
+        &:focus, &:hover {
+            color            : #5d5d5d;
+            background-color : #FFFFFC;
+        }
+        .media-left {
+            background-repeat   : no-repeat;
+            background-position : center;
+            background-image    : url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAN0lEQVR4AWP4//+/ARA34MAGDIQAUNH8/7hBAzEGNOAx4D4QKxA2gAJANQNGDRg1oIAiAwYcAACnDBSQSu7UHgAAAABJRU5ErkJggg==');
+            .smallicon {
+                visibility : hidden;
+            }
+        }
+    }
+}
+.navbar-light {
+
+    a {
+        color : $link-on-background;
+    }
+}
+
+/*Fond menu gauche*/
+[data-region="drawer"] {
+    background-color: $body-bg;
+    }
+
+#page.container-fluid {
+    padding : 0 1rem;
+}
+#nav-notification-popover-container,
+#nav-message-popover-container {
+    background-repeat   : no-repeat;
+    background-position : center;
+    img {
+        visibility : hidden;
+    }
+}
+
+#nav-drawer.closed {
+    left : -($drawer-width + $drawer-offscreen-gutter);
+}
+#nav-drawer {
+    width : $drawer-width;
+}
+body.drawer-open-left {
+    margin-left : $drawer-width;
+}
+body.drawer-open-right {
+    margin-right : $drawer-width;
+}
+
+th,td {
+    border:0px solid #000;
+}
+
+li.section a.dropdown-toggle {
+    color:$link-on-background;
+}
+li.section a.dropdown-toggle:hover {
+    color:$link-on-background-hover;
+}
+
+.btn-secondary {
+    background-color:$bg-gris;
+}
+
+
+/* Cours */
+.course-content .section-summary {
+    border-width:0px;
+}
+
+.activity a.icon, .activity i.icon{
+    color: #888888;
+}
+
+.section-modchooser-text {
+    color: $color-link;
+}
+
+/* Titre dans les cours*/
+h1{
+color:$navbar-light-color;
+font-weight: 600;
+}
+
+/* Titre section */
+
+.section h3 {
+    border-bottom : 2px dashed $gray-light;
+    color:$gray;
+}
+
+h3.sectionname, h3.section-title {
+ background-color:$navbar-light-color;
+    color: $link-on-background;
+    font-size: 2rem;
+    font-weight: 500;
+    padding:0.2em;
+    font-variant: small-caps;
+    border-bottom-width : 0px;
+}
+
+h3.sectionname a, h3.section-title a {
+   color: $link-on-background;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/*Affichage des conditions d'accès à une section*/
+.availabilityinfo {
+    background-color: $bg-gris;
+    padding: 3px;
+    border: $border-width solid #d4d1cd;
+    border-left: 5px solid #d4d1cd;
+    opacity: 0.9;
+    margin: 0px 10px 0px 10px;
+}
+
+/* footer */
+#page-footer a .icon {
+    color:$link-on-background;
+}
+
+/**
+ * Blocks.
+ */
+#block-region-side-pre .card-block {
+    border: 1px solid rgba(238,238,238,1);
+    border-left: 10px solid rgba(238,238,238,1);
+    border-right: 10px solid rgba(238,238,238,1);
+    .card-title {
+        padding-bottom: ($spacer/2);
+        font-size: 1.143rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}
+
+.block-region .card-block {
+    /*border: 1px solid rgba(238,238,238,1);*/
+    .card-title {
+        padding-bottom: ($spacer/2);
+        font-size: 1.143rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}
+
+.block-region .block_private_files .card-block td {
+    overflow:hidden;
+}
+
+[data-region="blocks-column"] {
+    background-color: $bg-gris;
+    border-top: 10px solid rgba(238,238,238,1);
+}
+
+/*block lp_result*/
+
+#downloadtype_dataformat {
+    font-size : 0.8em;
+}
+
+.dataformatselector {
+    margin-left : 0px !important;
+}
+
+.block_lp_result label {
+    float : left;
+}
+
+
+/**
+* Correction dans les activités
+*/
+
+/*Activité leçon*/
+#page-mod-lesson-view label.form-check-inline p {
+               display:inline-block;
+               padding-right: 10px;
+}
+.progress_bar_completed {
+     background-color: green;
+     color: #fff;
+}
+.lessonbutton {
+    background-color: #f05f30;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #ec7b05;
+    color: #fff;
+}
+.lessonbutton a {
+    color: #fff;
+}
+
+/*Page*/
+#page-mod-page-view .modified{
+    display:none;
+}
+
+.debuggingmessage {
+    font-size: .75rem;
+    z-index: 2000;
+    position: relative;
+    background-color: #fff;
+}
+
+pre.xdebug-var-dump {
+    position: relative;
+    background-color: #fff;
+    z-index: 10000;
+}
+
+
