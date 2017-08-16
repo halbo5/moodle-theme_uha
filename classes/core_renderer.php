@@ -31,7 +31,7 @@ if (!defined('MOODLE_INTERNAL')) {
 
 class theme_uha_core_renderer extends \theme_boost\output\core_renderer {
 
-     public function custom_menu($custommenuitems = '') {
+    public function custom_menu($custommenuitems = '') {
         global $CFG, $USER, $DB;
 
         $user = $DB->get_record('user', array('id' => $USER->id));
@@ -107,8 +107,6 @@ class theme_uha_core_renderer extends \theme_boost\output\core_renderer {
             $content .= $this->render_from_template('core/custom_menu_item', $context);
         }
 
-    return $content;
-
-    //return parent::render_custom_menu($menu);
+        return $content;
     }
 }

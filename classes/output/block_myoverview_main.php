@@ -60,7 +60,7 @@ class block_myoverview_main extends \block_myoverview\output\main {
             }
         }
         $this->tab = $tab;
-     }
+    }
 
     /**
      * Export this data so it can be used as the context for a mustache template.

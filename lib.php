@@ -65,7 +65,6 @@ function theme_uha_extend_navigation_user_settings($navigation, $user) {
     // Don't bother doing needless calculations unless we are on the relevant pages and if no capacity to create courses.
     $onpreferencepage = $PAGE->url->compare(new moodle_url('/user/preferences.php'), URL_MATCH_BASE);
     $onthemepage = $PAGE->url->compare(new moodle_url('/theme/uha/pref.php'), URL_MATCH_BASE);
-    $systemcontext = context_system::instance();
 
     if (!$onpreferencepage && !$onthemepage) {
         return null;

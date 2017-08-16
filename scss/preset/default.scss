@@ -12,7 +12,7 @@ $gray-light:                #818a91 !default;
 $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
-$brand-primary:             #2f7dA8 !default;
+$brand-primary:             #2f7da8 !default;
 $brand-success:             #77b300 !default;
 $brand-warning:             #ff8800 !default;
 $brand-danger:              #ff4136 !default;
@@ -75,11 +75,11 @@ $drawer-width : 285px;
 }
 
 #page-login-index #page-wrapper {
-    background-color:$bg-gris;
+    background-color: $bg-gris;
 }
 
 #page-login-index #page {
-    margin-top:0px;
+    margin-top: 0px;
 }
 
 /**
@@ -135,7 +135,8 @@ $drawer-width : 285px;
 .navbar-light .navbar-nav .active > .nav-link:focus,
 .navbar-light .navbar-nav .nav-link.open:focus,
 .navbar-light .navbar-nav .nav-link.active:focus,
-.navbar-light .navbar-nav .open > .nav-link:hover, .navbar-light .navbar-nav .active > .nav-link:hover,
+.navbar-light .navbar-nav .open > .nav-link:hover,
+.navbar-light .navbar-nav .active > .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.open:hover,
 .navbar-light .navbar-nav .nav-link.active:hover,
 .userbutton:hover {
@@ -154,7 +155,7 @@ $drawer-width : 285px;
 }
 
 .search-input-wrapper {
-   transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
 }
 
 .usermenu .login a {
@@ -205,7 +206,8 @@ $drawer-width : 285px;
     top: -64px;
 }
 
-.menubar .dropdown-toggle,.menubar .dropdown-toggle i {
+.menubar .dropdown-toggle,
+.menubar .dropdown-toggle i {
     color: $link-on-background;
 }
 
@@ -273,13 +275,12 @@ $drawer-width : 285px;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
-    content: "/";
     content: ">";
     color: #021002;
 }
 
 #region-main-box > #region-main > .card {
-    border-width: 0px;
+    border-width: 0;
 }
 
 /*#page-my-index #page-header .card {
@@ -288,8 +289,8 @@ $drawer-width : 285px;
 
 #page-header .card {
     background-color: #b25200;
-    h1{
-        color:$link-on-background;
+    h1 {
+        color: $link-on-background;
     }
 }
 
@@ -337,7 +338,7 @@ $drawer-width : 285px;
 /*nav-drawer et bouton hamburger*/
 
 [data-region="drawer-toggle"] .btn-secondary {
-    background-color:$body-bg;
+    background-color: $body-bg;
 }
 
 #nav-drawer {
@@ -377,7 +378,7 @@ $drawer-width : 285px;
 /*Fond menu gauche*/
 [data-region="drawer"] {
     background-color: $body-bg;
-    }
+}
 
 #page.container-fluid {
     padding: 0 1rem;
@@ -404,8 +405,9 @@ body.drawer-open-right {
     margin-right: $drawer-width;
 }
 
-th, td {
-    border: 0px solid #000;
+th,
+td {
+    border: 0 solid #000;
 }
 
 li.section a.dropdown-toggle {
@@ -422,10 +424,11 @@ li.section a.dropdown-toggle:hover {
 
 /* Cours */
 .course-content .section-summary {
-    border-width: 0px;
+    border-width: 0;
 }
 
-.activity a.icon, .activity i.icon {
+.activity a.icon,
+.activity i.icon {
     color: #888888;
 }
 
@@ -435,8 +438,8 @@ li.section a.dropdown-toggle:hover {
 
 /* Titre dans les cours*/
 h1 {
-color: $navbar-light-color;
-font-weight: 600;
+    color: $navbar-light-color;
+    font-weight: 600;
 }
 
 /* Titre section */
@@ -446,17 +449,19 @@ font-weight: 600;
     color: $gray;
 }
 
-h3.sectionname, h3.section-title {
- background-color: $navbar-light-color;
+h3.sectionname,
+h3.section-title {
+    background-color: $navbar-light-color;
     color: $link-on-background;
     font-size: 2rem;
     font-weight: 500;
     padding: 0.2em;
     font-variant: small-caps;
-    border-bottom-width: 0px;
+    border-bottom-width: 0;
 }
 
-h3.sectionname a, h3.section-title a {
+h3.sectionname a,
+h3.section-title a {
     color: $link-on-background;
     font-size: 2rem;
     font-weight: 600;
@@ -469,7 +474,7 @@ h3.sectionname a, h3.section-title a {
     border: $border-width solid #d4d1cd;
     border-left: 5px solid #d4d1cd;
     opacity: 0.9;
-    margin: 0px 10px 0px 10px;
+    margin: 0 10px 0px 10px;
 }
 
 /* footer */
@@ -518,7 +523,7 @@ h3.sectionname a, h3.section-title a {
 }
 
 .dataformatselector {
-    margin-left: 0px !important;
+    margin-left: 0 !important;
 }
 
 .block_lp_result label {
