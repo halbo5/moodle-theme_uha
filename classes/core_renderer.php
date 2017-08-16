@@ -51,7 +51,7 @@ class theme_uha_core_renderer extends \theme_boost\output\core_renderer {
 
     protected function render_custom_menu(custom_menu $menu) {
 
-        global $PAGE, $USER, $DB;
+        global $USER, $DB;
 
         // Add my courses menu if user preference ok.
         $mycourses = $this->page->navigation->get('mycourses');
