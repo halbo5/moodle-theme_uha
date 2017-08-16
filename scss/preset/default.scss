@@ -79,7 +79,7 @@ $drawer-width : 285px;
 }
 
 #page-login-index #page {
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 /**
@@ -474,7 +474,7 @@ h3.section-title a {
     border: $border-width solid #d4d1cd;
     border-left: 5px solid #d4d1cd;
     opacity: 0.9;
-    margin: 0 10px 0px 10px;
+    margin: 0 10px 0 10px;
 }
 
 /* footer */
@@ -541,8 +541,8 @@ h3.section-title a {
     padding-right: 10px;
 }
 .progress_bar_completed {
-     background-color: green;
-     color: #fff;
+    background-color: green;
+    color: #fff;
 }
 .lessonbutton {
     background-color: #f05f30;
