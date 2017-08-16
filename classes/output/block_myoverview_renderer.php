@@ -21,7 +21,12 @@
  * @copyright  2017 Alain Bolli
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 namespace theme_uha\output;
+
+if (!defined('MOODLE_INTERNAL')) {
+    die('Direct access to this script is forbidden.');  // It must be included from a Moodle page.
+}
 
 require_once($CFG->dirroot . '/theme/uha/classes/output/block_myoverview_main.php');
 
@@ -51,9 +56,9 @@ class block_myoverview_renderer extends \block_myoverview\output\renderer {
 
     public function render_main(\block_myoverview\output\main $main) {
 
-        $main=new \theme_uha\output\block_myoverview_main();
+        $main = new \theme_uha\output\block_myoverview_main();
 
-        $result=$this->render_from_template('block_myoverview/main', $main->export_for_template($this));
+        $result = $this->render_from_template('block_myoverview/main', $main->export_for_template($this));
         return $result;
     }
 }

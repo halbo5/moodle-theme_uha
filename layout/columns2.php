@@ -66,9 +66,8 @@ $templatecontext = [
 
 $templatecontext['flatnavigation'] = $PAGE->flatnav;
 if (isloggedin()) {
-echo $OUTPUT->render_from_template('theme_uha/columns2', $templatecontext);
-}
-else {
+    echo $OUTPUT->render_from_template('theme_uha/columns2', $templatecontext);
+} else {
     $templatecontext['textfrontpage'] = get_config('theme_uha', 'textfrontpage');
-   echo $OUTPUT->render_from_template('theme_uha/columns2_guest', $templatecontext);
+    echo $OUTPUT->render_from_template('theme_uha/columns2_guest', $templatecontext);
 }

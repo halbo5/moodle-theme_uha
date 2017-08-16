@@ -12,16 +12,16 @@ $gray-light:                #818a91 !default;
 $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
-$brand-primary:             #2F7DA8 !default;
+$brand-primary:             #2f7dA8 !default;
 $brand-success:             #77b300 !default;
 $brand-warning:             #ff8800 !default;
 $brand-danger:              #ff4136 !default;
 $brand-inverse:             $gray-dark !default;
 $navbar-height:             50px !default;
 $link-on-background:        #fff;
-$link-on-background-hover:  rgba(255,255,255,0.5);
+$link-on-background-hover:  rgba(255, 255, 255, 0.5);
 $bg-gris:                   #f4f4f4;
-$color-link:                #F05F30;
+$color-link:                #f05f30;
 
 
 // Spacing
@@ -70,8 +70,8 @@ $drawer-width : 285px;
 // Import everything.
 @import "moodle";
 
-#page-wrapper{
-    background-color:$body-bg;
+#page-wrapper {
+    background-color: $body-bg;
 }
 
 #page-login-index #page-wrapper {
@@ -87,7 +87,7 @@ $drawer-width : 285px;
  */
 .navbar-light {
     background-color: $navbar-light-color;
-    border-bottom: $border-width solid #004B72;
+    border-bottom: $border-width solid #004b72;
 
     .container {
         padding-left: 0;
@@ -120,42 +120,61 @@ $drawer-width : 285px;
             font-size: $font-size-sm;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color:$link-on-background;
+            color: $link-on-background;
         }
     }
 }
 
-.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover,.navbar-light .navbar-nav .open>.nav-link, .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.open, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .open>.nav-link:focus, .navbar-light .navbar-nav .active>.nav-link:focus, .navbar-light .navbar-nav .nav-link.open:focus, .navbar-light .navbar-nav .nav-link.active:focus, .navbar-light .navbar-nav .open>.nav-link:hover, .navbar-light .navbar-nav .active>.nav-link:hover, .navbar-light .navbar-nav .nav-link.open:hover, .navbar-light .navbar-nav .nav-link.active:hover, .userbutton:hover{
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .open > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.open,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .open > .nav-link:focus,
+.navbar-light .navbar-nav .active > .nav-link:focus,
+.navbar-light .navbar-nav .nav-link.open:focus,
+.navbar-light .navbar-nav .nav-link.active:focus,
+.navbar-light .navbar-nav .open > .nav-link:hover, .navbar-light .navbar-nav .active > .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.open:hover,
+.navbar-light .navbar-nav .nav-link.active:hover,
+.userbutton:hover {
     color: $link-on-background-hover;
 }
 
-.nav-tabs .nav-link.active, .nav-tabs .nav-item.open .nav-link, .nav-tabs .nav-link.active:focus, .nav-tabs .nav-item.open .nav-link:focus, .nav-tabs .nav-link.active:hover, .nav-tabs .nav-item.open .nav-link:hover {
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.open .nav-link,
+.nav-tabs .nav-link.active:focus,
+.nav-tabs .nav-item.open .nav-link:focus,
+.nav-tabs .nav-link.active:hover,
+.nav-tabs .nav-item.open .nav-link:hover {
     color: #55595c;
     background-color: $bg-gris;
     border-color: #ddd #ddd transparent;
 }
 
-.search-input-wrapper{
-   transition:opacity .5s ease-in-out;
+.search-input-wrapper {
+   transition: opacity .5s ease-in-out;
 }
 
 .usermenu .login a {
-    color:$link-on-background;
+    color: $link-on-background;
 }
 .usermenu .login a:hover {
-    color:$link-on-background-hover;
+    color: $link-on-background-hover;
 }
 
 /*Zone logo - titre site*/
-.navbar-brand{
-background-color: transparent!important;
-padding-top: 0;}
+.navbar-brand {
+    background-color: transparent !important;
+    padding-top: 0;
+}
 
 /*Titre du site*/
-.site-name{
-padding-left:1em;
-position: relative;
-color: $link-on-background;
+.site-name {
+    padding-left: 1em;
+    position: relative;
+    color: $link-on-background;
 }
 
 /**
@@ -163,6 +182,7 @@ color: $link-on-background;
  */
 .dropdown-menu {
     border-left-width: 5px;
+    border-left-color: $brand-primary;
     font-size: 14px;
     border-radius: 0;
     background: #fcfcfc;
@@ -185,8 +205,8 @@ color: $link-on-background;
     top: -64px;
 }
 
-.menubar .dropdown-toggle,.menubar .dropdown-toggle i{
-    color:$link-on-background;
+.menubar .dropdown-toggle,.menubar .dropdown-toggle i {
+    color: $link-on-background;
 }
 
 /**
@@ -197,38 +217,38 @@ color: $link-on-background;
 }
 
 .action-menu-3-menubar {
-    background-color:$color-link;
-    padding:5px;
-    border-radius:50%;
+    background-color: $color-link;
+    padding: 5px;
+    border-radius: 50%;
 }
 
 .menubar {
-       background-color:$color-link;
-    padding:5px;
-    border-radius:50%;
-    color:$link-on-background;
+    background-color: $color-link;
+    padding: 5px;
+    border-radius: 50%;
+    color: $link-on-background;
 }
 
 .block-controls .menubar {
-       background-color:#f4f4f4;
-    color:#ccc;
+    background-color: #f4f4f4;
+    color: #ccc;
 }
 
-.block-controls .menubar i.icon{
-    color:#ccc;
+.block-controls .menubar i.icon {
+    color: #ccc;
 }
 
 .block .block-controls .dropdown-toggle {
     color: #ccc;
 }
 .activity .menubar {
-    background-color:transparent;
+    background-color: transparent;
 }
-.activity .menubar a.dropdown-toggle{
-    color:$color-link;
-    border:1px solid $color-link;
-    &:hover{
-        color:$color-link;
+.activity .menubar a.dropdown-toggle {
+    color: $color-link;
+    border: 1px solid $color-link;
+    &:hover {
+        color: $color-link;
         background: #e8a1a1;
     }
 }
@@ -248,8 +268,8 @@ color: $link-on-background;
 /* breadcrumb */
 
 #page-navbar {
-    background-color:$body-bg;
-    padding:0 10px 0 10px;
+    background-color: $body-bg;
+    padding: 0 10px 0 10px;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
@@ -259,15 +279,15 @@ color: $link-on-background;
 }
 
 #region-main-box > #region-main > .card {
-    border-width:0px;
+    border-width: 0px;
 }
 
 /*#page-my-index #page-header .card {
-    background-color: #B25200;
+    background-color: #b25200;
 }*/
 
 #page-header .card {
-    background-color: #B25200;
+    background-color: #b25200;
     h1{
         color:$link-on-background;
     }
@@ -286,6 +306,10 @@ color: $link-on-background;
 
 .block_myoverview .courses-view-course-item {
     height: auto;
+}
+
+.block_myoverview .disabled {
+    display: none;
 }
 
 /**
@@ -312,32 +336,33 @@ color: $link-on-background;
 
 /*nav-drawer et bouton hamburger*/
 
-[data-region="drawer-toggle"] .btn-secondary{
+[data-region="drawer-toggle"] .btn-secondary {
     background-color:$body-bg;
 }
 
 #nav-drawer {
-    /*padding          : 0;*/
-    background-color : $bg-gris;
+    /*padding: 0;*/
+    background-color: $bg-gris;
     .list-group-item {
-        color            : #3a3a3a;
-        background-color : #FFF;
+        color: #3a3a3a;
+        background-color: #fff;
         /*border-top: 1px solid rgb(238, 238, 238);
         border-bottom: 1px solid rgb(238, 238, 238);
         border-left: 1px solid rgb(238, 238, 238);
         border-right: 1px solid rgb(238, 238, 238);*/
-        border           : 1px solid rgb(238, 238, 238);
-        padding          : .55rem 1rem;
-        &:focus, &:hover {
-            color            : #5d5d5d;
-            background-color : #FFFFFC;
+        border: 1px solid rgb(238, 238, 238);
+        padding: .55rem 1rem;
+        &:focus,
+        &:hover {
+            color: #5d5d5d;
+            background-color: #fffffc;
         }
         .media-left {
-            background-repeat   : no-repeat;
-            background-position : center;
-            background-image    : url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAN0lEQVR4AWP4//+/ARA34MAGDIQAUNH8/7hBAzEGNOAx4D4QKxA2gAJANQNGDRg1oIAiAwYcAACnDBSQSu7UHgAAAABJRU5ErkJggg==');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAN0lEQVR4AWP4//+/ARA34MAGDIQAUNH8/7hBAzEGNOAx4D4QKxA2gAJANQNGDRg1oIAiAwYcAACnDBSQSu7UHgAAAABJRU5ErkJggg==');
             .smallicon {
-                visibility : hidden;
+                visibility: hidden;
             }
         }
     }
@@ -345,7 +370,7 @@ color: $link-on-background;
 .navbar-light {
 
     a {
-        color : $link-on-background;
+        color: $link-on-background;
     }
 }
 
@@ -355,52 +380,52 @@ color: $link-on-background;
     }
 
 #page.container-fluid {
-    padding : 0 1rem;
+    padding: 0 1rem;
 }
 #nav-notification-popover-container,
 #nav-message-popover-container {
-    background-repeat   : no-repeat;
-    background-position : center;
+    background-repeat: no-repeat;
+    background-position: center;
     img {
-        visibility : hidden;
+        visibility: hidden;
     }
 }
 
 #nav-drawer.closed {
-    left : -($drawer-width + $drawer-offscreen-gutter);
+    left: -($drawer-width + $drawer-offscreen-gutter);
 }
 #nav-drawer {
-    width : $drawer-width;
+    width: $drawer-width;
 }
 body.drawer-open-left {
-    margin-left : $drawer-width;
+    margin-left: $drawer-width;
 }
 body.drawer-open-right {
-    margin-right : $drawer-width;
+    margin-right: $drawer-width;
 }
 
-th,td {
-    border:0px solid #000;
+th, td {
+    border: 0px solid #000;
 }
 
 li.section a.dropdown-toggle {
-    color:$link-on-background;
+    color: $link-on-background;
 }
 li.section a.dropdown-toggle:hover {
-    color:$link-on-background-hover;
+    color: $link-on-background-hover;
 }
 
 .btn-secondary {
-    background-color:$bg-gris;
+    background-color: $bg-gris;
 }
 
 
 /* Cours */
 .course-content .section-summary {
-    border-width:0px;
+    border-width: 0px;
 }
 
-.activity a.icon, .activity i.icon{
+.activity a.icon, .activity i.icon {
     color: #888888;
 }
 
@@ -409,30 +434,30 @@ li.section a.dropdown-toggle:hover {
 }
 
 /* Titre dans les cours*/
-h1{
-color:$navbar-light-color;
+h1 {
+color: $navbar-light-color;
 font-weight: 600;
 }
 
 /* Titre section */
 
 .section h3 {
-    border-bottom : 2px dashed $gray-light;
-    color:$gray;
+    border-bottom: 2px dashed $gray-light;
+    color: $gray;
 }
 
 h3.sectionname, h3.section-title {
- background-color:$navbar-light-color;
+ background-color: $navbar-light-color;
     color: $link-on-background;
     font-size: 2rem;
     font-weight: 500;
-    padding:0.2em;
+    padding: 0.2em;
     font-variant: small-caps;
-    border-bottom-width : 0px;
+    border-bottom-width: 0px;
 }
 
 h3.sectionname a, h3.section-title a {
-   color: $link-on-background;
+    color: $link-on-background;
     font-size: 2rem;
     font-weight: 600;
 }
@@ -449,16 +474,16 @@ h3.sectionname a, h3.section-title a {
 
 /* footer */
 #page-footer a .icon {
-    color:$link-on-background;
+    color: $link-on-background;
 }
 
 /**
  * Blocks.
  */
 #block-region-side-pre .card-block {
-    border: 1px solid rgba(238,238,238,1);
-    border-left: 10px solid rgba(238,238,238,1);
-    border-right: 10px solid rgba(238,238,238,1);
+    border: 1px solid rgba(238, 238, 238, 1);
+    border-left: 10px solid rgba(238, 238, 238, 1);
+    border-right: 10px solid rgba(238, 238, 238, 1);
     .card-title {
         padding-bottom: ($spacer/2);
         font-size: 1.143rem;
@@ -468,7 +493,7 @@ h3.sectionname a, h3.section-title a {
 }
 
 .block-region .card-block {
-    /*border: 1px solid rgba(238,238,238,1);*/
+    /*border: 1px solid rgba(238, 238, 238, 1);*/
     .card-title {
         padding-bottom: ($spacer/2);
         font-size: 1.143rem;
@@ -478,26 +503,26 @@ h3.sectionname a, h3.section-title a {
 }
 
 .block-region .block_private_files .card-block td {
-    overflow:hidden;
+    overflow: hidden;
 }
 
 [data-region="blocks-column"] {
     background-color: $bg-gris;
-    border-top: 10px solid rgba(238,238,238,1);
+    border-top: 10px solid rgba(238, 238, 238, 1);
 }
 
 /*block lp_result*/
 
 #downloadtype_dataformat {
-    font-size : 0.8em;
+    font-size: 0.8em;
 }
 
 .dataformatselector {
-    margin-left : 0px !important;
+    margin-left: 0px !important;
 }
 
 .block_lp_result label {
-    float : left;
+    float: left;
 }
 
 
@@ -507,8 +532,8 @@ h3.sectionname a, h3.section-title a {
 
 /*Activité leçon*/
 #page-mod-lesson-view label.form-check-inline p {
-               display:inline-block;
-               padding-right: 10px;
+    display: inline-block;
+    padding-right: 10px;
 }
 .progress_bar_completed {
      background-color: green;
@@ -526,8 +551,8 @@ h3.sectionname a, h3.section-title a {
 }
 
 /*Page*/
-#page-mod-page-view .modified{
-    display:none;
+#page-mod-page-view .modified {
+    display: none;
 }
 
 .debuggingmessage {
@@ -542,5 +567,3 @@ pre.xdebug-var-dump {
     background-color: #fff;
     z-index: 10000;
 }
-
-

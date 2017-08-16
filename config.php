@@ -27,7 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 $THEME->name = 'uha';
 $THEME->sheets = [];
 $THEME->editor_sheets = [];
-$THEME->scss=function($theme) {
+$THEME->scss = function($theme) {
     return theme_uha_get_main_scss_content($theme);
 };
 $THEME->parents = ['boost'];

@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -55,4 +54,88 @@ function theme_uha_get_main_scss_content($theme) {
 
     // Combine them together.
     return $pre . "\n" . $scss . "\n" . $post;
+}
+
+/**
+ * Add a user preference to choose complete interface or not
+ */
+function theme_uha_extend_navigation_user_settings($navigation, $user) {
+    global $USER, $PAGE;
+
+    // Don't bother doing needless calculations unless we are on the relevant pages and if no capacity to create courses.
+    $onpreferencepage = $PAGE->url->compare(new moodle_url('/user/preferences.php'), URL_MATCH_BASE);
+    $onthemepage = $PAGE->url->compare(new moodle_url('/theme/uha/pref.php'), URL_MATCH_BASE);
+    $systemcontext = context_system::instance();
+
+    if (!$onpreferencepage && !$onthemepage) {
+        return null;
+    }
+
+    // No access to other peoples subscriptions.
+    if ($USER->id == $user->id) {
+        // We skip doing a check here if we are on the event monitor page as the check is done internally on that page.
+        $node = navigation_node::create(get_string('preferencetitle', 'theme_uha'), null,
+                navigation_node::TYPE_CONTAINER, null, 'preferencetitle');
+
+        if (isset($node) && !empty($navigation)) {
+            $navigation->add_node($node);
+        }
+
+        $url = new moodle_url('/theme/uha/pref.php');
+        $subsnode = navigation_node::create(get_string('themepref', 'theme_uha'), $url,
+                navigation_node::TYPE_SETTING, null, 'themepref', new pix_icon('i/settings', ''));
+
+        if (isset($subsnode) && !empty($navigation)) {
+            $node->add_node($subsnode);
+        }
+    }
+}
+
+/**
+ * Validating the new preference
+ */
+
+function theme_uha_user_preferences() {
+    $preferences = array();
+    $preferences['mycourses'] = array(
+        'type' => PARAM_INT,
+        'null' => NULL_NOT_ALLOWED,
+        'default' => 0,
+        'choices' => array(0, 1)
+    );
+    $preferences['plus'] = array(
+        'type' => PARAM_INT,
+        'null' => NULL_NOT_ALLOWED,
+        'default' => 0,
+        'choices' => array(0, 1)
+    );
+        $preferences['langmenu'] = array(
+        'type' => PARAM_INT,
+        'null' => NULL_NOT_ALLOWED,
+        'default' => 1,
+        'choices' => array(0, 1)
+    );
+
+    return $preferences;
+}
+
+function get_user_mycourses_preference($user) {
+    // We look for the interface preference and add it to the user object.
+    $pref = get_user_preferences('mycourses', false, $user->id);
+    $user->mycourses = $pref;
+    return $user;
+}
+
+function get_user_plus_preference($user) {
+    // We look for the interface preference and add it to the user object.
+    $pref = get_user_preferences('plus', false, $user->id);
+    $user->plus = $pref;
+    return $user;
+}
+
+function get_user_langmenu_preference($user) {
+    // We look for the interface preference and add it to the user object.
+    $pref = get_user_preferences('langmenu', true, $user->id);
+    $user->langmenu = $pref;
+    return $user;
 }

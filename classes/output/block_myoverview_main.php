@@ -44,14 +44,14 @@ class block_myoverview_main extends \block_myoverview\output\main {
     /**
      * @var string The tab to display.
      */
-   public $tab;
+    public $tab;
 
     /**
      * Constructor.
      *
      * @param string $tab The tab to display.
      */
-   public function __construct() {
+    public function __construct() {
         if (!$tab = optional_param('myoverviewtab', null, PARAM_ALPHA)) {
             // Check if the user has no preference, if so get the site setting.
             if (!$tab = get_user_preferences('block_myoverview_last_tab')) {
@@ -60,7 +60,7 @@ class block_myoverview_main extends \block_myoverview\output\main {
             }
         }
         $this->tab = $tab;
-    }
+     }
 
     /**
      * Export this data so it can be used as the context for a mustache template.

@@ -1,6 +1,5 @@
 <?php
-
-/// This file is part of Moodle - http://moodle.org/
+// This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -62,7 +61,7 @@ if ($ADMIN->fulltree) {
 
     // Preset files setting.
     $name = 'theme_uha/presetfiles';
-    $title = get_string('presetfiles','theme_uha');
+    $title = get_string('presetfiles', 'theme_uha');
     $description = get_string('presetfiles_desc', 'theme_uha');
 
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'preset', 0,
@@ -81,12 +80,16 @@ if ($ADMIN->fulltree) {
     // Must add the page after definiting all the settings!
     $settings->add($page);
 
-    // Text settings
+    // Text settings.
     $page = new admin_settingpage('theme_uha_text', get_string('text', 'theme_uha'));
 
      // Frontpage not logged in text setting.
     $page = new admin_settingpage('theme_uha_text', get_string('textsettings', 'theme_uha'));
-    $setting = new admin_setting_configtextarea('theme_uha/textfrontpage', get_string('textfrontpage', 'theme_uha'), get_string('textfrontpage_desc', 'theme_uha'), '', PARAM_RAW);
+    $setting = new admin_setting_configtextarea('theme_uha/textfrontpage',
+        get_string('textfrontpage', 'theme_uha'),
+        get_string('textfrontpage_desc', 'theme_uha'),
+        '',
+        PARAM_RAW);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
