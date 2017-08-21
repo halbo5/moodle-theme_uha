@@ -50,6 +50,8 @@ if ($courseform->is_cancelled()) {
         'preference_plus' => $data->enableplus]);
     useredit_update_user_preference(['id' => $user->id,
         'preference_langmenu' => $data->enablelangmenu]);
+    useredit_update_user_preference(['id' => $user->id,
+        'preference_colorset' => $data->colorset]);
     redirect($redirect);
 }
 

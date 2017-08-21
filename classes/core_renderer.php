@@ -34,9 +34,8 @@ class theme_uha_core_renderer extends \theme_boost\output\core_renderer {
     public function custom_menu($custommenuitems = '') {
         global $CFG, $USER, $DB;
 
-        $user = $DB->get_record('user', array('id' => $USER->id));
-        if ($user) {
-            $usernew = get_user_plus_preference($user);
+        if ($USER) {
+            $usernew = get_user_plus_preference($USER);
         } else {
             $usernew = new StdClass();
             $usernew->plus = 0;
@@ -55,9 +54,9 @@ class theme_uha_core_renderer extends \theme_boost\output\core_renderer {
 
         // Add my courses menu if user preference ok.
         $mycourses = $this->page->navigation->get('mycourses');
-        $user = $DB->get_record('user', array('id' => $USER->id));
-        if ($user) {
-            $user = get_user_mycourses_preference($user);
+        //$user = $DB->get_record('user', array('id' => $USER->id));
+        if ($USER) {
+            $user = get_user_mycourses_preference($USER);
             $usernew = get_user_langmenu_preference($user);
         } else {
             $usernew = new StdClass();

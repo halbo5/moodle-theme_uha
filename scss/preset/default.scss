@@ -13,6 +13,8 @@ $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
 $brand-primary:             #2f7da8 !default;
+$brand-primary2:        #be00e0;
+$brand-primary3:        #1e8dff;
 $brand-success:             #77b300 !default;
 $brand-warning:             #ff8800 !default;
 $brand-danger:              #ff4136 !default;
@@ -21,8 +23,7 @@ $navbar-height:             50px !default;
 $link-on-background:        #fff;
 $link-on-background-hover:  rgba(255, 255, 255, 0.5);
 $bg-gris:                   #f4f4f4;
-$color-link:                #f05f30;
-
+$headerandsectiontitle2: #519400;
 
 // Spacing
 $spacer:   1rem !default;
@@ -219,38 +220,23 @@ $drawer-width : 285px;
 }
 
 .action-menu-3-menubar {
-    background-color: $color-link;
+    background-color: $brand-primary;
     padding: 5px;
     border-radius: 50%;
 }
 
 .menubar {
-    background-color: $color-link;
+    background-color: $brand-primary;
     padding: 5px;
     border-radius: 50%;
     color: $link-on-background;
 }
 
-.block-controls .menubar {
-    background-color: #f4f4f4;
-    color: #ccc;
-}
-
-.block-controls .menubar i.icon {
-    color: #ccc;
-}
-
-.block .block-controls .dropdown-toggle {
-    color: #ccc;
-}
-.activity .menubar {
-    background-color: transparent;
-}
 .activity .menubar a.dropdown-toggle {
-    color: $color-link;
-    border: 1px solid $color-link;
+    color: $brand-primary;
+    border: 1px solid $brand-primary;
     &:hover {
-        color: $color-link;
+        color: $brand-primary;
         background: #e8a1a1;
     }
 }
@@ -305,12 +291,34 @@ $drawer-width : 285px;
     }
 }
 
+.block_myoverview .card {
+    border-width: 0 0 1px 5px;
+}
 .block_myoverview .courses-view-course-item {
-    height: auto;
+    height: 160px;
 }
 
 .block_myoverview .disabled {
     display: none;
+}
+.block_myoverview .media-body {
+    vertical-align: middle;
+}
+
+.block_myoverview .h5 {
+    font-size: 1rem;
+    margin-top: -7px;
+}
+[data-block="myoverview"] {
+    border-width: 0;
+}
+
+.progress-chart-container .progress-doughnut .progress-indicator svg .circle {
+    stroke: $brand-primary;
+}
+
+.progress-chart-container .progress-doughnut .progress-text.has-percent {
+    color: $brand-primary;
 }
 
 /**
@@ -432,7 +440,7 @@ li.section a.dropdown-toggle:hover {
 }
 
 .section-modchooser-text {
-    color: $color-link;
+    color: $brand-primary;
 }
 
 /* Titre dans les cours*/
@@ -544,7 +552,7 @@ h3.section-title a {
     color: #fff;
 }
 .lessonbutton {
-    background-color: #f05f30;
+    background-color: $brand-primary;
     padding: 5px;
     margin: 5px;
     border: 1px solid #ec7b05;
@@ -570,4 +578,167 @@ pre.xdebug-var-dump {
     position: relative;
     background-color: #fff;
     z-index: 10000;
+}
+
+/**
+ * Colorset 2
+ *
+ */
+
+.colorset2 {
+
+    a, #page-footer a {
+        color: $brand-primary2;
+    }
+    .btn-primary {
+    background-color: $brand-primary2;
+    border-color: $brand-primary2;
+    }
+    .navbar-brand {
+            background-color: $brand-primary2;
+            &.has-logo {
+                color: $brand-primary2;
+                @include hover-focus {
+                    color: $brand-primary2;
+                }
+            }
+        }
+    .navbar-light {
+    background-color: $headerandsectiontitle2;
+    border-bottom: $border-width solid #004b72;
+    }
+    h3.sectionname,
+    h3.section-title {
+        background-color: $headerandsectiontitle2;
+    }
+
+    .dropdown-menu {
+        border-left-color: $brand-primary2;
+    }
+
+    .action-menu-3-menubar {
+        background-color: $brand-primary2;
+        padding: 5px;
+        border-radius: 50%;
+    }
+    .menubar {
+        background-color: $brand-primary2;
+    }
+    .activity .menubar a.dropdown-toggle {
+        color: $brand-primary2;
+        border: 1px solid $brand-primary2;
+        &:hover {
+            color: $brand-primary2;
+            background: #e8a1a1;
+        }
+    }
+
+    #page-header .card {
+        background-color: #7d0094;
+    }
+
+    .progress-chart-container .progress-doughnut .progress-indicator svg .circle {
+    stroke: $brand-primary2;
+    }
+
+    .progress-chart-container .progress-doughnut .progress-text.has-percent {
+        color: $brand-primary2;
+    }
+    .section-modchooser-text {
+    color: $brand-primary2;
+    }
+    .lessonbutton {
+    background-color: $brand-primary2;
+    }
+}
+
+.colorset3 {
+
+    a, #page-footer a {
+        color: $brand-primary3;
+    }
+    .btn-primary {
+    background-color: $brand-primary3;
+    border-color: $brand-primary3;
+    }
+    .navbar-brand {
+            background-color: $brand-primary3;
+            &.has-logo {
+                color: $brand-primary3;
+                @include hover-focus {
+                    color: $brand-primary3;
+                }
+            }
+        }
+    /*.navbar-light {
+    background-color: $headerandsectiontitle2;
+    border-bottom: $border-width solid #004b72;
+    }*/
+    h3.sectionname,
+    h3.section-title {
+        background-color: transparent;
+        color: #000;
+    }
+
+    h3.sectionname a,
+    h3.section-title a {
+        color: $brand-primary3;
+    }
+
+    .dropdown-menu {
+        border-left-color: $brand-primary3;
+    }
+
+    .action-menu-3-menubar {
+        background-color: $brand-primary3;
+    }
+    .menubar {
+        background-color: $brand-primary3;
+    }
+    .activity .menubar a.dropdown-toggle {
+        color: $brand-primary2;
+        border: 1px solid $brand-primary3;
+        &:hover {
+            color: $brand-primary3;
+            background: #e8a1a1;
+        }
+    }
+
+    #page-header .card {
+        background-color: transparent;
+        h1 {
+            color: #000;
+        }
+    }
+
+    .progress-chart-container .progress-doughnut .progress-indicator svg .circle {
+    stroke: $brand-primary3;
+    }
+
+    .progress-chart-container .progress-doughnut .progress-text.has-percent {
+        color: $brand-primary3;
+    }
+    .section-modchooser-text {
+    color: $brand-primary3;
+    }
+    .lessonbutton {
+    background-color: $brand-primary3;
+    }
+}
+
+/* menubar grey colors has to be defined after colorset */
+.block-controls .menubar {
+    background-color: #f4f4f4;
+    color: #ccc;
+}
+
+.block-controls .menubar i.icon {
+    color: #ccc;
+}
+
+.block .block-controls .dropdown-toggle {
+    color: #ccc;
+}
+.activity .menubar {
+    background-color: transparent;
 }

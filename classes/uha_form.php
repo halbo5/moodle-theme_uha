@@ -61,6 +61,18 @@ class uha_form extends \moodleform {
         $mform->setDefault('enablelangmenu',
             get_user_preferences('langmenu', true, $this->_customdata['userid']));
 
+        $colorsets = array('1' => get_string('couleur1', 'theme_uha'),
+                                       '2' => get_string('couleur2', 'theme_uha'),
+                                       '3' => get_string('couleur3', 'theme_uha'));
+        $mform->addElement('select',
+             'colorset',
+             get_string('colorset', 'theme_uha'), $colorsets);
+        $mform->setDefault('colorset',
+            get_user_preferences('colorset', 1, $this->_customdata['userid']));
+        $mform->addElement('html',
+            '<div class=\'col-md-3\'></div>
+            <div class="col-md-9">'.get_string('configcolorset', 'theme_uha').'</div>');
+
         // Add some extra hidden fields.
         $mform->addElement('hidden', 'id');
         $mform->setType('id', PARAM_INT);

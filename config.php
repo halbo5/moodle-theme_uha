@@ -30,6 +30,7 @@ $THEME->editor_sheets = [];
 $THEME->scss = function($theme) {
     return theme_uha_get_main_scss_content($theme);
 };
+//$THEME->prescsscallback = 'theme_uha_get_pre_scss';
 $THEME->parents = ['boost'];
 $THEME->enable_dock = false;
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';

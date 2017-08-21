@@ -30,23 +30,36 @@ $config = get_config('theme_uha');
 
 if (isloggedin()) {
     $navdraweropen = (get_user_preferences('drawer-open-nav', 'true') == 'true');
+    $colorsetid = get_user_preferences('colorset', 1, $USER->id);
+    $colorset = 'colorset'.$colorsetid;
 } else {
     $navdraweropen = false;
+    $colorset = false;
 }
 $extraclasses = [];
 if ($navdraweropen) {
     $extraclasses[] = 'drawer-open-left';
 }
+if ($colorset) {
+    $extraclasses[] = $colorset;
+}
+
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = strpos($blockshtml, 'data-block=') !== false;
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
-$firstlinkname = $config->firstlinkname;
-$firstlinkurl = $config->firstlinkurl;
-$secondlinkname = $config->secondlinkname;
-$secondlinkurl = $config->secondlinkurl;
-$centerlinkname = $config->centerlinkname;
-$centerlinkurl = $config->centerlinkurl;
+if ($config->firstlinkname && $config->firstlinkurl) {
+    $firstlinkname = $config->firstlinkname;
+    $firstlinkurl = $config->firstlinkurl;
+}
+if ($config->secondlinkname && $config->secondlinkurl) {
+    $secondlinkname = $config->secondlinkname;
+    $secondlinkurl = $config->secondlinkurl;
+}
+if ($config->centerlinkname && $config->centerlinkurl) {
+    $centerlinkname = $config->centerlinkname;
+    $centerlinkurl = $config->centerlinkurl;
+}
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
