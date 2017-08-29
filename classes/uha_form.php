@@ -45,7 +45,7 @@ class uha_form extends \moodleform {
             get_string('enablemycourses', 'theme_uha'),
             get_string('configenablemycourses', 'theme_uha'));
         $mform->setDefault('enablemycourses',
-            get_user_preferences('mycourses', false, $this->_customdata['userid']));
+            get_user_preferences('mycourses', true, $this->_customdata['userid']));
 
         $mform->addElement('advcheckbox',
             'enableplus',

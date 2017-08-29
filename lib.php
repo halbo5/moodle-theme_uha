@@ -138,6 +138,31 @@ function theme_uha_extend_navigation_user_settings($navigation, $user) {
     }
 }
 
+class theme_uha_transmuted_custom_menu_item extends custom_menu_item {
+    public function __construct(custom_menu_item $menunode) {
+        parent::__construct($menunode->get_text(), $menunode->get_url(), $menunode->get_title(), $menunode->get_sort_order(), $menunode->get_parent());
+        $this->children = $menunode->get_children();
+
+        $matches = array();
+        if (preg_match('/^\[\[([a-zA-Z0-9\-\_\:]+)\]\]$/', $this->text, $matches)) {
+            try {
+                $this->text = get_string($matches[1], 'theme_uha');
+            } catch (Exception $e) {
+                $this->text = $matches[1];
+            }
+        }
+
+        $matches = array();
+        if (preg_match('/^\[\[([a-zA-Z0-9\-\_\:]+)\]\]$/', $this->title, $matches)) {
+            try {
+                $this->title = get_string($matches[1], 'theme_uha');
+            } catch (Exception $e) {
+                $this->title = $matches[1];
+            }
+        }
+    }
+}
+
 /**
  * Validating the new preference
  */
@@ -175,7 +200,7 @@ function theme_uha_user_preferences() {
 
 function get_user_mycourses_preference($user) {
     // We look for the mycourse preference and add it to the user object.
-    $pref = get_user_preferences('mycourses', false, $user->id);
+    $pref = get_user_preferences('mycourses', true, $user->id);
     $user->mycourses = $pref;
     return $user;
 }

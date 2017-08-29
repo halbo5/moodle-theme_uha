@@ -13,8 +13,8 @@ $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
 $brand-primary:             #2f7da8 !default;
-$brand-primary2:        #be00e0;
-$brand-primary3:        #1e8dff;
+$brand-primary2:        #f05f30 !default;
+$brand-primary3:        #0645ad;
 $brand-success:             #77b300 !default;
 $brand-warning:             #ff8800 !default;
 $brand-danger:              #ff4136 !default;
@@ -72,7 +72,7 @@ $drawer-width : 285px;
 @import "moodle";
 
 #page-wrapper {
-    background-color: $body-bg;
+    background-color: $bg-gris;
 }
 
 #page-login-index #page-wrapper {
@@ -207,10 +207,10 @@ $drawer-width : 285px;
     top: -64px;
 }
 
-.menubar .dropdown-toggle,
+/*.menubar .dropdown-toggle,
 .menubar .dropdown-toggle i {
     color: $link-on-background;
-}
+}*/
 
 /**
  * User picture.
@@ -223,13 +223,6 @@ $drawer-width : 285px;
     background-color: $brand-primary;
     padding: 5px;
     border-radius: 50%;
-}
-
-.menubar {
-    background-color: $brand-primary;
-    padding: 5px;
-    border-radius: 50%;
-    color: $link-on-background;
 }
 
 .activity .menubar a.dropdown-toggle {
@@ -273,12 +266,12 @@ $drawer-width : 285px;
     background-color: #b25200;
 }*/
 
-#page-header .card {
+/*#page-header .card {
     background-color: #b25200;
     h1 {
         color: $link-on-background;
     }
-}
+}*/
 
 /**
  * Dashboard styling.
@@ -492,10 +485,11 @@ h3.section-title a {
 /**
  * Blocks.
  */
+
 #block-region-side-pre .card-block {
     border: 1px solid rgba(238, 238, 238, 1);
-    border-left: 10px solid rgba(238, 238, 238, 1);
-    border-right: 10px solid rgba(238, 238, 238, 1);
+    /*border-left: 10px solid rgba(238, 238, 238, 1);
+    border-right: 10px solid rgba(238, 238, 238, 1);*/
     .card-title {
         padding-bottom: ($spacer/2);
         font-size: 1.143rem;
@@ -505,7 +499,6 @@ h3.section-title a {
 }
 
 .block-region .card-block {
-    /*border: 1px solid rgba(238, 238, 238, 1);*/
     .card-title {
         padding-bottom: ($spacer/2);
         font-size: 1.143rem;
@@ -518,10 +511,12 @@ h3.section-title a {
     overflow: hidden;
 }
 
+/*
 [data-region="blocks-column"] {
     background-color: $bg-gris;
     border-top: 10px solid rgba(238, 238, 238, 1);
 }
+*/
 
 /*block lp_result*/
 
@@ -587,8 +582,21 @@ pre.xdebug-var-dump {
 
 .colorset2 {
 
+    #page-wrapper {
+    background-color: #fff;
+    }
     a, #page-footer a {
         color: $brand-primary2;
+    }
+    a.btn-default, a.btn-secondary {
+        color: #373a3c;
+    }
+    a.btn-primary {
+        color:#fff;
+    }
+    .btn-primary:hover {
+    background-color: #dd4210;
+    border-color: #d33f0f;
     }
     .btn-primary {
     background-color: $brand-primary2;
@@ -603,17 +611,33 @@ pre.xdebug-var-dump {
                 }
             }
         }
-    .navbar-light {
+    /*.navbar-light {
     background-color: $headerandsectiontitle2;
     border-bottom: $border-width solid #004b72;
     }
     h3.sectionname,
     h3.section-title {
         background-color: $headerandsectiontitle2;
+    }*/
+
+    .menubar {
+    background-color: $brand-primary2;
+    padding: 5px;
+    border-radius: 50%;
+    color: $link-on-background;
     }
 
     .dropdown-menu {
         border-left-color: $brand-primary2;
+    }
+
+    .menubar .dropdown-toggle,
+    .menubar .dropdown-toggle i {
+        color: $link-on-background;
+    }
+
+    .dropdown-item a {
+    color: #3a3a3a;
     }
 
     .action-menu-3-menubar {
@@ -621,9 +645,11 @@ pre.xdebug-var-dump {
         padding: 5px;
         border-radius: 50%;
     }
-    .menubar {
-        background-color: $brand-primary2;
+    .item-actions .menubar, .item-actions .menubar .dropdown-toggle, .item-actions .menubar .dropdown-toggle i {
+        background-color: transparent;
+        color: #3a3a3a;
     }
+
     .activity .menubar a.dropdown-toggle {
         color: $brand-primary2;
         border: 1px solid $brand-primary2;
@@ -634,7 +660,10 @@ pre.xdebug-var-dump {
     }
 
     #page-header .card {
-        background-color: #7d0094;
+        background-color: #b25200;
+        h1 {
+        color: $link-on-background;
+    }
     }
 
     .progress-chart-container .progress-doughnut .progress-indicator svg .circle {
@@ -650,12 +679,35 @@ pre.xdebug-var-dump {
     .lessonbutton {
     background-color: $brand-primary2;
     }
+
+    #block-region-side-pre .card-block {
+    border-left: 10px solid rgba(238, 238, 238, 1);
+    border-right: 10px solid rgba(238, 238, 238, 1);
+    }
+
+    [data-region="blocks-column"] {
+        background-color: $bg-gris;
+        border-top: 10px solid rgba(238, 238, 238, 1);
+    }
 }
 
 .colorset3 {
 
     a, #page-footer a {
         color: $brand-primary3;
+    }
+    a.btn-default, a.btn-secondary {
+        color: #373a3c;
+    }
+    a.btn-primary {
+        color:#fff;
+    }
+    .navbar-light .action-menu a.dropdown-toggle {
+    color: #fff;
+    }
+    .btn-primary:hover {
+    background-color: $brand-primary3;
+    border-color: $brand-primary3;
     }
     .btn-primary {
     background-color: $brand-primary3;
@@ -689,14 +741,23 @@ pre.xdebug-var-dump {
         border-left-color: $brand-primary3;
     }
 
+    .dropdown-item a {
+    color: #3a3a3a;
+    }
+
+    .item-actions .menubar, .item-actions .menubar .dropdown-toggle, .item-actions .menubar .dropdown-toggle i {
+        background-color: transparent;
+        color: #3a3a3a;
+    }
+
     .action-menu-3-menubar {
         background-color: $brand-primary3;
     }
-    .menubar {
+    /*.menubar {
         background-color: $brand-primary3;
-    }
+    }*/
     .activity .menubar a.dropdown-toggle {
-        color: $brand-primary2;
+        color: $brand-primary3;
         border: 1px solid $brand-primary3;
         &:hover {
             color: $brand-primary3;
@@ -704,12 +765,12 @@ pre.xdebug-var-dump {
         }
     }
 
-    #page-header .card {
+   /* #page-header .card {
         background-color: transparent;
         h1 {
             color: #000;
         }
-    }
+    }*/
 
     .progress-chart-container .progress-doughnut .progress-indicator svg .circle {
     stroke: $brand-primary3;
