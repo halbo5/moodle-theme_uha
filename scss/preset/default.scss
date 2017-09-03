@@ -411,10 +411,14 @@ td {
 }
 
 li.section a.dropdown-toggle {
-    color: $link-on-background;
+    color: $brand-primary;
 }
 li.section a.dropdown-toggle:hover {
-    color: $link-on-background-hover;
+    color: $brand-primary;
+}
+
+li.section .section_action_menu a.dropdown-toggle {
+color: #fff;
 }
 
 .btn-secondary {
@@ -659,6 +663,10 @@ pre.xdebug-var-dump {
         }
     }
 
+    li.section a.dropdown-toggle:hover {
+        color: #fff;
+    }
+
     #page-header .card {
         background-color: #b25200;
         h1 {
@@ -689,6 +697,13 @@ pre.xdebug-var-dump {
         background-color: $bg-gris;
         border-top: 10px solid rgba(238, 238, 238, 1);
     }
+    a.lessonbutton {
+        color: #fff;
+    }
+    ul.topics {
+        padding-top:7px;
+    }
+
 }
 
 .colorset3 {
