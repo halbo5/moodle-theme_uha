@@ -24,7 +24,6 @@
 
 // This line protects the file from being accessed by a URL directly.
 defined('MOODLE_INTERNAL') || die();
-require_once(__DIR__ . "/../../config.php");
 
 // We will add callbacks here as we add features to our theme.
 function theme_uha_get_main_scss_content($theme) {
@@ -56,53 +55,6 @@ function theme_uha_get_main_scss_content($theme) {
     // Combine them together.
     return $pre . "\n" . $scss . "\n" . $post;
 }
-
-/*function theme_uha_get_pre_scss($theme) {
-    global $USER, $DB;
-    //$user = $DB->get_record('user', array('id' => $USER->id));
-        if ($USER) {
-            $usernew = get_user_colorset_preference($USER);
-        } else {
-            $usernew = new StdClass();
-            $usernew->colorset = 1;
-        }
-
-    $scss = '';
-    $configurable = [
-        // Config key => [variableName, ...].
-        'brandcolor' => ['brand-primary'],
-    ];
-
-    // Prepend variables first.
-    foreach ($configurable as $configkey => $targets) {
-        switch ($usernew->colorset) {
-            case '1':
-                $value = isset($theme->settings->{$configkey}) ? $theme->settings->{$configkey} : null;
-                break;
-            case '2':
-                $value = '#f05c98';
-
-            default:
-                $value = isset($theme->settings->{$configkey}) ? $theme->settings->{$configkey} : null;
-                break;
-        }
-
-
-        if (empty($value)) {
-            continue;
-        }
-        $value = '#f05c9'.$USER->colorset;
-        array_map(function($target) use (&$scss, $value) {
-            $scss .= '$' . $target . ': ' . $value . ";\n";
-        }, (array) $targets);
-    }
-
-    // Prepend pre-scss.
-    if (!empty($theme->settings->scsspre)) {
-        $scss .= $theme->settings->scsspre;
-    }
-    return $scss;
-}*/
 
 /**
  * Add a user preference to choose complete interface or not
@@ -138,31 +90,6 @@ function theme_uha_extend_navigation_user_settings($navigation, $user) {
     }
 }
 
-class theme_uha_transmuted_custom_menu_item extends custom_menu_item {
-    public function __construct(custom_menu_item $menunode) {
-        parent::__construct($menunode->get_text(), $menunode->get_url(), $menunode->get_title(), $menunode->get_sort_order(), $menunode->get_parent());
-        $this->children = $menunode->get_children();
-
-        $matches = array();
-        if (preg_match('/^\[\[([a-zA-Z0-9\-\_\:]+)\]\]$/', $this->text, $matches)) {
-            try {
-                $this->text = get_string($matches[1], 'theme_uha');
-            } catch (Exception $e) {
-                $this->text = $matches[1];
-            }
-        }
-
-        $matches = array();
-        if (preg_match('/^\[\[([a-zA-Z0-9\-\_\:]+)\]\]$/', $this->title, $matches)) {
-            try {
-                $this->title = get_string($matches[1], 'theme_uha');
-            } catch (Exception $e) {
-                $this->title = $matches[1];
-            }
-        }
-    }
-}
-
 /**
  * Validating the new preference
  */
@@ -187,41 +114,27 @@ function theme_uha_user_preferences() {
         'default' => 1,
         'choices' => array(0, 1)
     );
-        $preferences['colorset'] = array(
-        'type' => PARAM_INT,
-        'null' => NULL_NOT_ALLOWED,
-        'default' => 1,
-        'choices' => array(1,2,3)
-    );
-
 
     return $preferences;
 }
 
 function get_user_mycourses_preference($user) {
-    // We look for the mycourse preference and add it to the user object.
-    $pref = get_user_preferences('mycourses', true, $user->id);
+    // We look for the interface preference and add it to the user object.
+    $pref = get_user_preferences('mycourses', false, $user->id);
     $user->mycourses = $pref;
     return $user;
 }
 
 function get_user_plus_preference($user) {
-    // We look for the plus menu preference and add it to the user object.
+    // We look for the interface preference and add it to the user object.
     $pref = get_user_preferences('plus', false, $user->id);
     $user->plus = $pref;
     return $user;
 }
 
 function get_user_langmenu_preference($user) {
-    // We look for the langmenu preference and add it to the user object.
+    // We look for the interface preference and add it to the user object.
     $pref = get_user_preferences('langmenu', true, $user->id);
     $user->langmenu = $pref;
     return $user;
 }
-
-/*function get_user_colorset_preference($user) {
-    // We look for the colorset preference and add it to the user object.
-    $pref = get_user_preferences('colorset', 1, $user->id);
-    $user->colorset = $pref;
-    return $user;
-}*/
