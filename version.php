@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2017112800;
+$plugin->version   = 2017113000;
 $plugin->requires  = 2017050500;
 $plugin->component = 'theme_uha';
 // This is a list of plugins, this plugin depends on (and their versions).
